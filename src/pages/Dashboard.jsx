@@ -3,9 +3,12 @@ import { useAccount } from "wagmi";
 import { notify } from "utils/toastHelper";
 import './style.css';
 import { WalletConnect } from "components/UI/ConnectButton";
+import ControlsModal from "components/ControlsModal";
+import useControls from "hooks/useControls";
 
 export default function Dashboard() {
   const { address } = useAccount();
+  const { openControlsModal } = useControls();
 
   return (
     <div className="dashboard"
@@ -39,7 +42,7 @@ export default function Dashboard() {
             <img src="/assets/YummCloud/Main/play.png" alt="play" />
           </div>
 
-          <div class="flex justify-center py-0.5 cursor-pointer	">
+          <div class="flex justify-center py-0.5 cursor-pointer" onClick={openControlsModal}>
             <img src="/assets/YummCloud/Main/control.png" alt="control" />
           </div>
 
@@ -71,6 +74,8 @@ export default function Dashboard() {
         </div>
 
       </div>
+
+      <ControlsModal />
     </div>
     
   );
