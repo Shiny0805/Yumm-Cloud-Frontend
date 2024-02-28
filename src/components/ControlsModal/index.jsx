@@ -11,12 +11,19 @@ import {
 import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
 import useControls from 'hooks/useControls';
+import "pages/style.css"
 
 /* ---------------------------------------------------------------------------------------- */
 
 const Dialog = styled(MuiDialog)(({ theme }) => ({
   '& .MuiPaper-root': {
-    backgrounImage: `url('/public/assets/YummCloud/ControlsModal/modal_layout.png')`,
+    backgroundImage: "url('/assets/YummCloud/ControlsModal/modal_layout.png')",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: 'cover',
+    minWidth: '835px',
+    height: '600px',
+    color: 'white',
+    borderRadius: '35px'
   }
 }));
 
@@ -36,7 +43,7 @@ const DialogTitle = (props) => {
             color: (theme) => theme.palette.grey[500],
           }}
         >
-          <CloseIcon />
+          {/* <CloseIcon /> */}
         </IconButton>
       ) : null}
     </MuiDialogTitle>
@@ -57,19 +64,25 @@ export default function ControlsModal() {
       open={modalIsOpened}
       onClose={closeControlsModal}
       aria-labelledby="responsive-dialog-title"
-      fullWidth={true}
-      maxWidth="sm"
-      sx={{ backgrounImage: `url('/public/assets/YummCloud/ControlsModal/modal_layout.png')` }}
+      // fullWidth={true}
+      // maxWidth="sm"
+      className="controls_modal_dialog"
     >
       <DialogTitle id="responsive-dialog-title" onClose={closeControlsModal}>
-        <Typography fontSize={18} fontWeight={700} fontFamily="'Montserrat', sans-serif" textTransform="uppercase" textAlign="center">
+        {/* <Typography fontSize={18} fontWeight={700} fontFamily="'Montserrat', sans-serif" textTransform="uppercase" textAlign="center">
           Account
-        </Typography>
+        </Typography> */}
       </DialogTitle>
 
       <DialogContent>
-        <div>
-          control modal
+        <div class="w-3/5 m-auto">
+          <div className='controls_modal_title flex justify-center py-20'>
+            <img src="/assets/YummCloud/ControlsModal/modal_title.png" alt="controls-modal-title" />
+          </div>
+
+          <div className="controls_modal_text">
+            Use the Cursor wheel to navigate the character in all direction. Adjust the cursor sensitivity to your personal preference.
+          </div>
         </div>
       </DialogContent>
     </Dialog>

@@ -67,3 +67,7 @@
     background: url('/public/assets/YummCloud/Main/main_menu_layer.png');
     text-align: center;
 }
+
+.controls_modal_text {
+    font-family: 'Urbanist', sans-serif;
+}
