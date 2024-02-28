@@ -66,12 +66,15 @@ export default function ControlsModal() {
       aria-labelledby="responsive-dialog-title"
       // fullWidth={true}
       // maxWidth="sm"
-      className="controls_modal_dialog"
+      className="controls_modal_dialog relative"
     >
       <DialogTitle id="responsive-dialog-title" onClose={closeControlsModal}>
         {/* <Typography fontSize={18} fontWeight={700} fontFamily="'Montserrat', sans-serif" textTransform="uppercase" textAlign="center">
           Account
         </Typography> */}
+        <div class="absolute right-[66.5px] top-[51px] cursor-pointer" onClick={closeControlsModal}>
+          <img src="/assets/YummCloud/ControlsModal/x.png" alt="x" />
+        </div>
       </DialogTitle>
 
       <DialogContent>
@@ -80,8 +83,14 @@ export default function ControlsModal() {
             <img src="/assets/YummCloud/ControlsModal/modal_title.png" alt="controls-modal-title" />
           </div>
 
-          <div className="controls_modal_text">
+          {/* <div className="controls_modal_text">
             Use the Cursor wheel to navigate the character in all direction. Adjust the cursor sensitivity to your personal preference.
+          </div> */}
+
+          <div className="controls_modal_content">
+            <div>
+              <img src="/assets/YummCloud/ControlsModal/modal_content.png" alt="controls_modal_content" />
+            </div>
           </div>
         </div>
       </DialogContent>
