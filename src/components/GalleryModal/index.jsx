@@ -16,13 +16,13 @@ import "pages/style.css"
 
 const Dialog = styled(MuiDialog)(({ theme }) => ({
   '& .MuiPaper-root': {
-    backgroundImage: "url('/assets/YummCloud/ControlsModal/modal_layout.png')",
+    backgroundImage: "url('/assets/YummCloud/GalleryModal/modal_layout.png')",
     backgroundRepeat: "no-repeat",
     backgroundSize: 'cover',
-    minWidth: '835px',
-    height: '600px',
-    color: 'white',
-    borderRadius: '35px'
+    minWidth: '939.4px',
+    height: '675.04px',
+    borderRadius: '35px',
+    boxShadow: '8px 10px 6px 0px #00000040'
   }
 }));
 
