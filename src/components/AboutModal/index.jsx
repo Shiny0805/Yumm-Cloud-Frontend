@@ -93,6 +93,10 @@ export default function AboutModal() {
             </div>
         </div>
 
+        <div class='absolute bottom-5'>
+            <img src="/assets/YummCloud/AboutModal/back_button.png" alt="back_button" />
+        </div>
+
       </DialogContent>
     </Dialog>
   );
