@@ -93,7 +93,7 @@ export default function AboutModal() {
             </div>
         </div>
 
-        <div class='absolute bottom-5'>
+        <div class='absolute bottom-3 left-[304px] cursor-pointer' onClick={closeAboutModal}>
             <img src="/assets/YummCloud/AboutModal/back_button.png" alt="back_button" />
         </div>
 

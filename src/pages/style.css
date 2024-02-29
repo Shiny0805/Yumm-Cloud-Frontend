@@ -63,8 +63,8 @@
 
 .main_menu {
     width: 302px;
-    height: 376px;
-    background: url('/public/assets/YummCloud/Main/main_menu_layer.png');
+    height: 444px;
+    background: url('/public/assets/YummCloud/Main/menu_layout.png');
     text-align: center;
 }
 
