@@ -18,10 +18,10 @@ const Dialog = styled(MuiDialog)(({ theme }) => ({
   '& .MuiPaper-root': {
     backgroundImage: "url('/assets/YummCloud/GalleryModal/modal_layout.png')",
     backgroundRepeat: "no-repeat",
-    backgroundSize: 'cover',
+    backgroundSize: 'auto',
     minWidth: '939.4px',
     height: '675.04px',
-    borderRadius: '35px',
+    borderRadius: '50px',
     boxShadow: '8px 10px 6px 0px #00000040'
   }
 }));
@@ -57,6 +57,8 @@ export default function GalleryModal() {
 
   const { modalIsOpened, closeGalleryModal } = useGallery();
 
+  const divsArray = new Array(18).fill(null);
+
   return (
     <Dialog
       fullScreen={fullScreen}
@@ -68,30 +70,32 @@ export default function GalleryModal() {
       className="controls_modal_dialog relative"
     >
       <DialogTitle id="responsive-dialog-title" onClose={closeGalleryModal}>
-        {/* <Typography fontSize={18} fontWeight={700} fontFamily="'Montserrat', sans-serif" textTransform="uppercase" textAlign="center">
-          Account
-        </Typography> */}
-        <div class="absolute right-[66.5px] top-[51px] cursor-pointer" onClick={closeGalleryModal}>
-          <img src="/assets/YummCloud/ControlsModal/x.png" alt="x" />
-        </div>
+
+
       </DialogTitle>
 
       <DialogContent>
-        <div class="w-3/5 m-auto">
-          <div className='controls_modal_title flex justify-center py-20'>
-            <img src="/assets/YummCloud/ControlsModal/modal_title.png" alt="controls-modal-title" />
-          </div>
 
-          {/* <div className="controls_modal_text">
-            Use the Cursor wheel to navigate the character in all direction. Adjust the cursor sensitivity to your personal preference.
-          </div> */}
-
-          <div className="controls_modal_content">
-            <div>
-              <img src="/assets/YummCloud/ControlsModal/modal_content.png" alt="controls_modal_content" />
+        <div>
+            <div class="w-3/5 m-auto pt-20">
+                <img src="/assets/YummCloud/GalleryModal/gallery_text.png" alt="gallery_text" />
             </div>
-          </div>
+
+            <div class="w-4/5 m-auto grid grid-cols-6 gap-4 py-5">
+                {
+                    divsArray.map((_, index) => (
+                        <div className='gallery_rectangle' key={index}>
+
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div class='flex justify-center py-2 cursor-pointer' onClick={closeGalleryModal}>
+                <img src="/assets/YummCloud/GalleryModal/back_button.png" alt="back_button" />
+            </div>
         </div>
+
       </DialogContent>
     </Dialog>
   );

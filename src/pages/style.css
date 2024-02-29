@@ -71,3 +71,9 @@
 .controls_modal_text {
     font-family: 'Urbanist', sans-serif;
 }
+
+.gallery_rectangle {
+    width: 110.12px;
+    height: 116.54px;
+    background: url('/public/assets/YummCloud//GalleryModal/gallery_rectangle.png');
+}
