@@ -7,6 +7,7 @@ import Layouts from "layouts";
 import { ControlsProvider } from "context/ControlsContext";
 import { GalleryProvider } from "context/GalleryContext";
 import { AboutProvider } from "context/AboutContext";
+import { MintProvider } from "context/MintContext";
 
 import "@rainbow-me/rainbowkit/styles.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,9 +18,11 @@ function App() {
     <ControlsProvider>
       <GalleryProvider>
         <AboutProvider>
-          <Layouts>
-            <RouterProvider router={PageRouter} />
-          </Layouts>
+          <MintProvider>
+            <Layouts>
+              <RouterProvider router={PageRouter} />
+            </Layouts>
+          </MintProvider>
         </AboutProvider>
       </GalleryProvider>
     </ControlsProvider>

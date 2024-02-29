@@ -10,7 +10,7 @@ import MintModal from "components/MintModal";
 import useControls from "hooks/useControls";
 import useGallery from "hooks/useGallery";
 import useAbout from "hooks/useAbout";
-import useModal from "hooks/useMint";
+import useMint from "hooks/useMint";
 
 export default function Dashboard() {
   const { address } = useAccount();
