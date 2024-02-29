@@ -5,13 +5,16 @@ import './style.css';
 import { WalletConnect } from "components/UI/ConnectButton";
 import ControlsModal from "components/ControlsModal";
 import GalleryModal from "components/GalleryModal";
+import AboutModal from "components/AboutModal";
 import useControls from "hooks/useControls";
 import useGallery from "hooks/useGallery";
+import useAbout from "hooks/useAbout";
 
 export default function Dashboard() {
   const { address } = useAccount();
   const { openControlsModal } = useControls();
   const { openGalleryModal } = useGallery();
+  const { openAboutModal } = useAbout();
 
   return (
     <div className="dashboard"
@@ -53,7 +56,7 @@ export default function Dashboard() {
             <img src="/assets/YummCloud/Main/gallery.png" alt="gellery" />
           </div>
 
-          <div class="flex justify-center py-0.5 cursor-pointer	">
+          <div class="flex justify-center py-0.5 cursor-pointer" onClick={openAboutModal}>
             <img src="/assets/YummCloud/Main/about.png" alt="about" />
           </div>
         </div>
@@ -80,6 +83,7 @@ export default function Dashboard() {
 
       <ControlsModal />
       <GalleryModal />
+      <AboutModal />
     </div>
     
   );

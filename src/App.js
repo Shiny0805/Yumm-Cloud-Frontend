@@ -6,6 +6,7 @@ import PageRouter from "router";
 import Layouts from "layouts";
 import { ControlsProvider } from "context/ControlsContext";
 import { GalleryProvider } from "context/GalleryContext";
+import { AboutProvider } from "context/AboutContext";
 
 import "@rainbow-me/rainbowkit/styles.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,9 +16,11 @@ function App() {
   return (
     <ControlsProvider>
       <GalleryProvider>
-        <Layouts>
-          <RouterProvider router={PageRouter} />
-        </Layouts>
+        <AboutProvider>
+          <Layouts>
+            <RouterProvider router={PageRouter} />
+          </Layouts>
+        </AboutProvider>
       </GalleryProvider>
     </ControlsProvider>
     
