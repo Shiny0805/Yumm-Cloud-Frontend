@@ -4,11 +4,14 @@ import { notify } from "utils/toastHelper";
 import './style.css';
 import { WalletConnect } from "components/UI/ConnectButton";
 import ControlsModal from "components/ControlsModal";
+import GalleryModal from "components/GalleryModal";
 import useControls from "hooks/useControls";
+import useGallery from "hooks/useGallery";
 
 export default function Dashboard() {
   const { address } = useAccount();
   const { openControlsModal } = useControls();
+  const { openGalleryModal } = useGallery();
 
   return (
     <div className="dashboard"
@@ -46,7 +49,7 @@ export default function Dashboard() {
             <img src="/assets/YummCloud/Main/control.png" alt="control" />
           </div>
 
-          <div class="flex justify-center py-0.5 cursor-pointer	">
+          <div class="flex justify-center py-0.5 cursor-pointer" onClick={openGalleryModal}>
             <img src="/assets/YummCloud/Main/gallery.png" alt="gellery" />
           </div>
 
@@ -76,6 +79,7 @@ export default function Dashboard() {
       </div>
 
       <ControlsModal />
+      <GalleryModal />
     </div>
     
   );
